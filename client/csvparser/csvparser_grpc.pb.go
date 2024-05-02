@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v5.26.1
-// source: protos/csv-parser.proto
+// source: csvparser/csvparser.proto
 
 package grpc_test_drive
 
@@ -101,5 +101,5 @@ var CSVParser_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "protos/csv-parser.proto",
+	Metadata: "csvparser/csvparser.proto",
 }

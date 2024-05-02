@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	pb "github.com/evgeniyarbatov/grpc-test-drive/client/protos"
+	pb "github.com/evgeniyarbatov/grpc-test-drive/client/csvparser"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )

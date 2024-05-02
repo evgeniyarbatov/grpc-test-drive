@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import csv_parser_pb2 as csv__parser__pb2
+import csvparser_pb2 as csvparser__pb2
 
 GRPC_GENERATED_VERSION = '1.63.0'
 GRPC_VERSION = grpc.__version__
@@ -20,7 +20,7 @@ except ImportError:
 if _version_not_supported:
     warnings.warn(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in csv_parser_pb2_grpc.py depends on'
+        + f' but the generated code in csvparser_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -41,8 +41,8 @@ class CSVParserStub(object):
         """
         self.CountRows = channel.unary_unary(
                 '/CSVParser/CountRows',
-                request_serializer=csv__parser__pb2.CSVParserRequest.SerializeToString,
-                response_deserializer=csv__parser__pb2.CSVParserResponse.FromString,
+                request_serializer=csvparser__pb2.CSVParserRequest.SerializeToString,
+                response_deserializer=csvparser__pb2.CSVParserResponse.FromString,
                 _registered_method=True)
 
 
@@ -60,8 +60,8 @@ def add_CSVParserServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CountRows': grpc.unary_unary_rpc_method_handler(
                     servicer.CountRows,
-                    request_deserializer=csv__parser__pb2.CSVParserRequest.FromString,
-                    response_serializer=csv__parser__pb2.CSVParserResponse.SerializeToString,
+                    request_deserializer=csvparser__pb2.CSVParserRequest.FromString,
+                    response_serializer=csvparser__pb2.CSVParserResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -88,8 +88,8 @@ class CSVParser(object):
             request,
             target,
             '/CSVParser/CountRows',
-            csv__parser__pb2.CSVParserRequest.SerializeToString,
-            csv__parser__pb2.CSVParserResponse.FromString,
+            csvparser__pb2.CSVParserRequest.SerializeToString,
+            csvparser__pb2.CSVParserResponse.FromString,
             options,
             channel_credentials,
             insecure,

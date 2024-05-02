@@ -3,5 +3,5 @@
 Call Python code from Golang over gRPC to parse CSV file:
 
 ```
-go run main.go
+go run main.go --columnName Time
 ```
