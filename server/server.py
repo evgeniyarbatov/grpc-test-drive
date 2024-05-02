@@ -5,9 +5,14 @@ import grpc
 import csv_parser_pb2
 import csv_parser_pb2_grpc
 
+import pandas as pd
+
+df = pd.read_csv("data/data.csv")
+
 class CSVParser(csv_parser_pb2_grpc.CSVParserServicer):
     def CountRows(self, request, context):
-        return csv_parser_pb2.CSVParserResponse(rowCount=1)
+        row_count = df[request.columnName].nunique()
+        return csv_parser_pb2.CSVParserResponse(rowCount=row_count)
 
 def serve():
     port = "50051"
@@ -17,7 +22,6 @@ def serve():
     server.start()
     print("Server started, listening on " + port)
     server.wait_for_termination()
-
 
 if __name__ == "__main__":
     logging.basicConfig()

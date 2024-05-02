@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	defaultColumnName = "id"
+	defaultColumnName = "Filename"
 )
 
 var (
@@ -37,5 +37,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("Could not count rows: %v", err)
 	}
-	log.Printf("Greeting: %d", r.GetRowCount())
+	log.Printf("Row count: %d", r.GetRowCount())
 }
