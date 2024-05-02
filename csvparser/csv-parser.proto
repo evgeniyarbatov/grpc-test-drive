@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package = "github.com/evgeniyarbatov/grpc-test-drive";
+
+message CSVParserRequest{
+  string columnName = 1;
+}
+
+message CSVParserResponse{
+  int64 rowCount = 1;
+}
+
+service CSVParser {
+  rpc CountRows (CSVParserRequest) returns (CSVParserResponse) {}
+}
